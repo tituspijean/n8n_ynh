@@ -1,0 +1,57 @@
+{
+    "name": "n8n",
+    "id": "n8n",
+    "packaging_format": 1,
+    "description": {
+        "en": "Extendable workflow automation tool",
+        "fr": "Outil extensible d'automatisation de flux"
+    },
+    "version": "0.129.0~ynh1",
+    "url": "https://n8n.io/",
+    "upstream": {
+        "license": "non-free",
+        "website": "https://n8n.io/",
+        "userdoc": "https://docs.n8n.io/",
+        "code": "https://github.com/n8n-io/n8n"
+    },
+    "maintainer": {
+        "name": "tituspijean",
+        "email": "tituspijean@outlook.com"
+    },
+    "requirements": {
+        "yunohost": ">= 4.1.7"
+    },
+    "multi_instance": true,
+    "services": [
+        "nginx"
+    ],
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "type": "domain",
+                "example": "example.com"
+            },
+            {
+                "name": "path",
+                "type": "path",
+                "example": "/n8n",
+                "default": "/n8n"
+            },
+            {
+                "name": "admin",
+                "type": "user",
+                "example": "johndoe"
+            },
+            {
+                "name": "is_public",
+                "type": "boolean",
+                "default": true,
+                "help": {
+                    "en": "Should the dashboard and the nodes endpoints be publicly accessible?",
+                    "fr": "Le tableau de bord et les routes des nodes doivent-ils être publiquement accessibles?"
+                }
+            }
+        ]
+    }
+}
